@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAFC986F-78FC-4025-B969-8FF1827ED7B7}</ProjectGuid>
+    <ProjectGuid>{F5CBA6F5-03F2-41BB-99F4-C306C40C1C5A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>C_sharp_oefeningen</RootNamespace>
-    <AssemblyName>C-sharp oefeningen</AssemblyName>
+    <RootNamespace>world</RootNamespace>
+    <AssemblyName>world</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="world.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C_sharp_oefeningen
+namespace today
 {
-    internal class Program
+    internal class today
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world");
+            var today = DateTime.Now.ToString("HH:mm:ss");
+            Console.WriteLine(today);
         }
     }
 }
