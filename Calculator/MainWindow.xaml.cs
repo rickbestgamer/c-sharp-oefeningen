@@ -28,6 +28,22 @@ namespace Calculator
         private void NumBtn(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
+            input.Text = btn.Content.ToString();
+        }
+
+        private void OperatorBtn(object sender, RoutedEventArgs e)
+        {
+            Button bt = (Button)sender;
+            input.Text = bt.Content.ToString();
+        }
+
+        private void ClearBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ReverseBtn(object sender, RoutedEventArgs e)
+        {
 
         }
     }
