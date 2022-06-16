@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8E10CCA2-B579-480C-A522-F016969DF628}</ProjectGuid>
+    <ProjectGuid>{4ED28CA4-21C5-4F3E-A2FF-C61019D921EC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MovingButtonWPF</RootNamespace>
-    <AssemblyName>MovingButtonWPF</AssemblyName>
+    <RootNamespace>Calculator</RootNamespace>
+    <AssemblyName>Calculator</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

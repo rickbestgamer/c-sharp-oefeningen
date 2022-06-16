@@ -16,13 +16,26 @@ using System.Windows.Shapes;
 namespace MovingButtonWPF
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class MainWindow : Window
     {
-        public Page1()
+        public MainWindow()
         {
             InitializeComponent();
+            BtnMoveMe.MouseMove += BtnMoveMe_MouseMove;
+            BtnMoveMe.Click += BtnMoveMe_Click;
+        }
+
+        private void BtnMoveMe_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Je hebt me te pakken");
+        }
+
+        private async Task MoveButton(Thickness th)
+        {
+            await Task.Delay(300);
+            BtnMoveMe.Margin = th;
             BtnMoveMe.MouseMove += BtnMoveMe_MouseMove;
         }
 
@@ -33,9 +46,11 @@ namespace MovingButtonWPF
             Random random = new Random();
             int w = random.Next(0, (int)MyGrid.ActualWidth - (int)btn.ActualWidth);
             int t = random.Next(0, (int)MyGrid.ActualHeight - (int)btn.ActualHeight);
+            BtnMoveMe.MouseMove -= BtnMoveMe_MouseMove;
             th.Left = w;
             th.Top = t;
-            btn.Margin = th;
+            _ = MoveButton(th);
         }
+
     }
 }
