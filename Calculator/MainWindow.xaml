@@ -52,7 +52,7 @@
         <Button Grid.Column="2" Grid.Row="6" Click="Btn._Click">.</Button>
 
         <!-- Maths Buttons -->
-        <Button Grid.Column="0" Grid.Row="1" Click="OperatorBtn">%</Button>
+        <Button Grid.Column="0" Grid.Row="1" Click="Btn">%</Button>
         <Button Grid.Column="0" Grid.Row="2" Click="OperatorBtn">1/x</Button>
         <Button Grid.Column="1" Grid.Row="2" Click="OperatorBtn">x^2</Button>
         <Button Grid.Column="2" Grid.Row="2" Click="OperatorBtn">sqrt</Button>
@@ -75,8 +75,6 @@
             <TextBox Name="input" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Center" FontSize="30" BorderThickness="0"></TextBox>
             <TextBox Name="calculation" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Center" FontSize="30" BorderThickness="0"></TextBox>
         </StackPanel>
-
-        <TextBox Name="action" Opacity="0">test</TextBox>
 
     </Grid>
 </Window>
