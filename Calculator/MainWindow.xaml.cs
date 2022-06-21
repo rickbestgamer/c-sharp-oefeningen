@@ -23,7 +23,9 @@ namespace Calculator
 
         private double Num1 = 0;
         private double Num2 = 0;
-        private double count = 0;
+        private double Count = 0;
+        private double ComCount = 0;
+        bool PntBtnActive = false;
         bool PrcntBtnActive = false;
         bool MultInvBtnActive = false;
         bool PwrBtnActive = false;
@@ -81,171 +83,188 @@ namespace Calculator
             {
                 Btn9_Click(sender, e);
             }
+            else if(e.Key == Key.Decimal)
+            {
+                BtnPnt_Click(sender, e);
+            }
+
         }
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
             if (input.Text.Length > 0)
             {
-                if (count >= 3)
+                if (ComCount >= 3 && Count <= 15)
                 {
                     input.Text += ",0";
-                    count = 1;
+                    ComCount = 1;
                 }
                 else
                 {
                     input.Text += "0";
-                    count++;
+                    ComCount++;
                 }
-            }
-            else
-            {
-                return;
             }
             
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            if (count >= 3)
+            if (ComCount >= 3 && Count <= 15)
             {
                 input.Text += ",1";
-                count = 1;
+                ComCount = 1;
+                Count++;
             }
-            else
+            else if(Count <= 15)
             {
                 input.Text += "1";
-                count++;
+                ComCount++;
+                Count++;
             }
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            if (count >= 3)
+            if (ComCount >= 3 && Count <= 15)
             {
                 input.Text += ",2";
-                count = 1;
+                ComCount = 1;
+                Count++;
             }
-            else
+            else if(Count <= 15)
             {
                 input.Text += "2";
-                count++;
+                ComCount++;
+                Count++;
             }
         }
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            if (count >= 3)
+            if (ComCount >= 3 && Count <= 15)
             {
                 input.Text += ",3";
-                count = 1;
+                ComCount = 1;
+                Count++;
             }
-            else
+            else if(Count <= 15)
             {
                 input.Text += "3";
-                count++;
+                ComCount++;
+                Count++;
             }
         }
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
-            if (count >= 3)
+            if (ComCount >= 3 && Count <= 15)
             {
                 input.Text += ",4";
-                count = 1;
+                ComCount = 1;
+                Count++;
             }
-            else
+            else if(Count <= 15)
             {
                 input.Text += "4";
-                count++;
+                ComCount++;
+                Count++;
             }
         }
 
         private void Btn5_Click(object sender, RoutedEventArgs e)
         {
-            if (count >= 3)
+            if (ComCount >= 3 && Count <= 15)
             {
                 input.Text += ",5";
-                count = 1;
+                ComCount = 1;
+                Count++;
             }
-            else
+            else if(Count <= 15)
             {
                 input.Text += "5";
-                count++;
+                ComCount++;
+                Count++;
             }
         }
 
         private void Btn6_Click(object sender, RoutedEventArgs e)
         {
-            if (count >= 3)
+            if (ComCount >= 3 && Count <= 15)
             {
                 input.Text += ",6";
-                count = 1;
+                ComCount = 1;
+                Count++;
             }
-            else
+            else if(Count <= 15)
             {
                 input.Text += "6";
-                count++;
+                ComCount++;
+                Count++;
             }
         }
 
         private void Btn7_Click(object sender, RoutedEventArgs e)
         {
-            if (count >= 3)
+            if (ComCount >= 3 && Count <= 15)
             {
                 input.Text += ",7";
-                count = 1;
+                ComCount = 1;
+                Count++;
             }
-            else
+            else if(Count <= 15) if(Count <= 15)
             {
                 input.Text += "7";
-                count++;
+                ComCount++;
+                Count++;
             }
         }
 
         private void Btn8_Click(object sender, RoutedEventArgs e)
         {
-            if (count >= 3)
+            if (ComCount >= 3 && Count <= 15)
             {
                 input.Text += ",8";
-                count = 1;
+                ComCount = 1;
+                Count++;
             }
-            else
+            else if(Count <= 15)
             {
                 input.Text += "8";
-                count++;
+                ComCount++;
+                Count++;
             }
         }
 
         private void Btn9_Click(object sender, RoutedEventArgs e)
         {
-            if (count >= 3)
+            if (ComCount >= 3 && Count <= 15)
             {
                 input.Text += ",9";
-                count = 1;
+                ComCount = 1;
+                Count++;
             }
-            else
+            else if(Count <= 15)
             {
                 input.Text += "9";
-                count++;
+                ComCount++;
+                Count++;
             }
         }
 
         private void BtnPnt_Click(object sender, RoutedEventArgs e)
         {
-            
-                input.Text += ".";
-                
-        }
-
-        private void PrcntBtn(object sender, RoutedEventArgs e)
-        {
-
+            if (PntBtnActive == false)
+            {
+                input.Text +=".";
+                PntBtnActive = true;
+                Count = 0;
+            }
         }
 
         private void MultInvBtn(object sender, RoutedEventArgs e)
         {
-
+            Num1 = 
         }
 
         private void PwrBtn(object sender, RoutedEventArgs e)
@@ -275,7 +294,7 @@ namespace Calculator
 
         private void AddBtn(object sender, RoutedEventArgs e)
         {
-            Num1 = Num1
+            
         }
 
         private void ResultBtn(object sender, RoutedEventArgs e)
