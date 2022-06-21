@@ -21,9 +21,19 @@ namespace Calculator
     public partial class MainWindow : Window
     {
 
-        long Num1 = 0;
-        long Num2 = 0;
-        string op = "";
+        private double Num1 = 0;
+        private double Num2 = 0;
+        private double count = 0;
+        bool PrcntBtnActive = false;
+        bool MultInvBtnActive = false;
+        bool PwrBtnActive = false;
+        bool SqrtBtnActive = false;
+        bool DevBtnActive = false;
+        bool TimesBtnActive = false;
+        bool MinusBtnActive = false;
+        bool AddBtnActive = false;
+        bool ReverseBtnActive = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,143 +41,241 @@ namespace Calculator
 
         private void KeyFunction(object sender, KeyEventArgs e)
         {
-            switch (e.Key < Key.NumPad0 || e.Key > Key.NumPad9)
+            if (e.Key == Key.NumPad0 || e.Key == Key.D0)
             {
-                case Key.NumPad0:
-                    Btn0_Click(sender, e);
-                    break;
+                Btn0_Click(sender, e);
+            }
+            else if (e.Key == Key.NumPad1 || e.Key == Key.D1)
+            {
+                Btn1_Click(sender, e);
+            }
+            else if (e.Key == Key.NumPad2 || e.Key == Key.D2)
+            {
+                Btn2_Click(sender, e);
+            }
+            else if (e.Key == Key.NumPad3 || e.Key == Key.D3)
+            {
+                Btn3_Click(sender, e);
+            }
+            else if (e.Key == Key.NumPad4 || e.Key == Key.D4)
+            {
+                Btn4_Click(sender, e);
+            }
+            else if (e.Key == Key.NumPad5 || e.Key == Key.D5)
+            {
+                Btn5_Click(sender, e);
+            }
+            else if (e.Key == Key.NumPad6 || e.Key == Key.D6)
+            {
+                Btn6_Click(sender, e);
+            }
+            else if (e.Key == Key.NumPad7 || e.Key == Key.D7)
+            {
+                Btn7_Click(sender, e);
+            }
+            else if (e.Key == Key.NumPad8 || e.Key == Key.D8)
+            {
+                Btn8_Click(sender, e);
+            }
+            else if (e.Key == Key.NumPad9 || e.Key == Key.D9)
+            {
+                Btn9_Click(sender, e);
             }
         }
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (input.Text.Length > 0)
             {
-                Num1 = (Num1 * 10);
-                input.Text = Num1.ToString();
+                if (count >= 3)
+                {
+                    input.Text += ",0";
+                    count = 1;
+                }
+                else
+                {
+                    input.Text += "0";
+                    count++;
+                }
             }
             else
             {
-                Num2 = (Num2 * 10);
-                input.Text = Num2.ToString();
+                return;
             }
+            
         }
+
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (count >= 3)
             {
-                Num1 = (Num1 * 10) + 1;
-                input.Text = Num1.ToString();
+                input.Text += ",1";
+                count = 1;
             }
             else
             {
-                Num2 = (Num2 * 10) + 1;
-                input.Text = Num2.ToString();
+                input.Text += "1";
+                count++;
             }
         }
+
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (count >= 3)
             {
-                Num1 = (Num1 * 10) + 2;
-                input.Text = Num1.ToString();
+                input.Text += ",2";
+                count = 1;
             }
             else
             {
-                Num2 = (Num2 * 10) + 2;
-                input.Text = Num2.ToString();
+                input.Text += "2";
+                count++;
             }
         }
+
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (count >= 3)
             {
-                Num1 = (Num1 * 10) + 3;
-                input.Text = Num1.ToString();
+                input.Text += ",3";
+                count = 1;
             }
             else
             {
-                Num2 = (Num2 * 10) + 3;
-                input.Text = Num2.ToString();
+                input.Text += "3";
+                count++;
             }
         }
+
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (count >= 3)
             {
-                Num1 = (Num1 * 10) + 4;
-                input.Text = Num1.ToString();
+                input.Text += ",4";
+                count = 1;
             }
             else
             {
-                Num2 = (Num2 * 10) + 4;
-                input.Text = Num2.ToString();
+                input.Text += "4";
+                count++;
             }
         }
+
         private void Btn5_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (count >= 3)
             {
-                Num1 = (Num1 * 10) + 5;
-                input.Text = Num1.ToString();
+                input.Text += ",5";
+                count = 1;
             }
             else
             {
-                Num2 = (Num2 * 10) + 5;
-                input.Text = Num2.ToString();
+                input.Text += "5";
+                count++;
             }
         }
+
         private void Btn6_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (count >= 3)
             {
-                Num1 = (Num1 * 10) + 6;
-                input.Text = Num1.ToString();
+                input.Text += ",6";
+                count = 1;
             }
             else
             {
-                Num2 = (Num2 * 10) + 6;
-                input.Text = Num2.ToString();
+                input.Text += "6";
+                count++;
             }
         }
+
         private void Btn7_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (count >= 3)
             {
-                Num1 = (Num1 * 10) + 7;
-                input.Text = Num1.ToString();
+                input.Text += ",7";
+                count = 1;
             }
             else
             {
-                Num2 = (Num2 * 10) + 7;
-                input.Text = Num2.ToString();
+                input.Text += "7";
+                count++;
             }
         }
+
         private void Btn8_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (count >= 3)
             {
-                Num1 = (Num1 * 10) + 8;
-                input.Text = Num1.ToString();
+                input.Text += ",8";
+                count = 1;
             }
             else
             {
-                Num2 = (Num2 * 10) + 8;
-                input.Text = Num2.ToString();
+                input.Text += "8";
+                count++;
             }
         }
+
         private void Btn9_Click(object sender, RoutedEventArgs e)
         {
-            if (op == "")
+            if (count >= 3)
             {
-                Num1 = (Num1 * 10) + 9;
-                input.Text = Num1.ToString();
+                input.Text += ",9";
+                count = 1;
             }
             else
             {
-                Num2 = (Num2 * 10) + 9;
-                input.Text = Num2.ToString();
+                input.Text += "9";
+                count++;
             }
+        }
+
+        private void BtnPnt_Click(object sender, RoutedEventArgs e)
+        {
+            
+                input.Text += ".";
+                
+        }
+
+        private void PrcntBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MultInvBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PwrBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SqrtBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DevBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TimesBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MinusBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddBtn(object sender, RoutedEventArgs e)
+        {
+            Num1 = Num1
         }
 
         private void ResultBtn(object sender, RoutedEventArgs e)
@@ -175,7 +283,22 @@ namespace Calculator
 
         }
 
-        private void OperatorBtn(object sender, RoutedEventArgs e)
+        private void CnslEntBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClearBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ReverseBtn(object sender, RoutedEventArgs e)
         {
 
         }
