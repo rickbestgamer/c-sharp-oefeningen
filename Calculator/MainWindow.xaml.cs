@@ -26,7 +26,6 @@ namespace Calculator
         private double Count = 0;
         private double ComCount = 0;
         bool PntBtnActive = false;
-        bool PrcntBtnActive = false;
         bool MultInvBtnActive = false;
         bool PwrBtnActive = false;
         bool SqrtBtnActive = false;
@@ -83,9 +82,37 @@ namespace Calculator
             {
                 Btn9_Click(sender, e);
             }
-            else if(e.Key == Key.Decimal)
+            else if (e.Key == Key.Decimal)
             {
                 BtnPnt_Click(sender, e);
+            }
+            else if (e.Key == Key.Back)
+            {
+                BackBtn(sender, e);
+            }
+            else if (e.Key == Key.Delete)
+            {
+                CansEntrBtn(sender, e);
+            }
+            else if (e.Key == Key.Enter)
+            {
+               ResultBtn(sender, e); 
+            }
+            else if (e.Key == Key.Divide)
+            {
+                DevBtn(sender, e);
+            }
+            else if (e.Key == Key.Multiply)
+            {
+                TimesBtn(sender, e);
+            }
+            else if (e.Key == Key.Subtract)
+            {
+                MinusBtn(sender, e);
+            }
+            else if (e.Key == Key.Add)
+            {
+                AddBtn(sender, e);
             }
 
         }
@@ -94,15 +121,17 @@ namespace Calculator
         {
             if (input.Text.Length > 0)
             {
-                if (ComCount >= 3 && Count <= 15)
+                if (ComCount >= 3 && Count <= 14)
                 {
                     input.Text += ",0";
                     ComCount = 1;
+                    Count++;
                 }
-                else
+                else if (Count <= 14)
                 {
                     input.Text += "0";
                     ComCount++;
+                    Count++;
                 }
             }
             
@@ -110,13 +139,13 @@ namespace Calculator
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            if (ComCount >= 3 && Count <= 15)
+            if (ComCount >= 3 && Count <= 14)
             {
                 input.Text += ",1";
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 15)
+            else if(Count <= 14)
             {
                 input.Text += "1";
                 ComCount++;
@@ -126,13 +155,13 @@ namespace Calculator
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            if (ComCount >= 3 && Count <= 15)
+            if (ComCount >= 3 && Count <= 14)
             {
                 input.Text += ",2";
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 15)
+            else if(Count <= 14)
             {
                 input.Text += "2";
                 ComCount++;
@@ -142,13 +171,13 @@ namespace Calculator
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            if (ComCount >= 3 && Count <= 15)
+            if (ComCount >= 3 && Count <= 14)
             {
                 input.Text += ",3";
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 15)
+            else if(Count <= 14)
             {
                 input.Text += "3";
                 ComCount++;
@@ -158,13 +187,13 @@ namespace Calculator
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
-            if (ComCount >= 3 && Count <= 15)
+            if (ComCount >= 3 && Count <= 14)
             {
                 input.Text += ",4";
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 15)
+            else if(Count <= 14)
             {
                 input.Text += "4";
                 ComCount++;
@@ -174,13 +203,13 @@ namespace Calculator
 
         private void Btn5_Click(object sender, RoutedEventArgs e)
         {
-            if (ComCount >= 3 && Count <= 15)
+            if (ComCount >= 3 && Count <= 14)
             {
                 input.Text += ",5";
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 15)
+            else if(Count <= 14)
             {
                 input.Text += "5";
                 ComCount++;
@@ -190,13 +219,13 @@ namespace Calculator
 
         private void Btn6_Click(object sender, RoutedEventArgs e)
         {
-            if (ComCount >= 3 && Count <= 15)
+            if (ComCount >= 3 && Count <= 14)
             {
                 input.Text += ",6";
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 15)
+            else if(Count <= 14)
             {
                 input.Text += "6";
                 ComCount++;
@@ -206,13 +235,13 @@ namespace Calculator
 
         private void Btn7_Click(object sender, RoutedEventArgs e)
         {
-            if (ComCount >= 3 && Count <= 15)
+            if (ComCount >= 3 && Count <= 14)
             {
                 input.Text += ",7";
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 15) if(Count <= 15)
+            else if(Count <= 14) if(Count <= 15)
             {
                 input.Text += "7";
                 ComCount++;
@@ -222,13 +251,13 @@ namespace Calculator
 
         private void Btn8_Click(object sender, RoutedEventArgs e)
         {
-            if (ComCount >= 3 && Count <= 15)
+            if (ComCount >= 3 && Count <= 14)
             {
                 input.Text += ",8";
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 15)
+            else if(Count <= 14)
             {
                 input.Text += "8";
                 ComCount++;
@@ -238,13 +267,13 @@ namespace Calculator
 
         private void Btn9_Click(object sender, RoutedEventArgs e)
         {
-            if (ComCount >= 3 && Count <= 15)
+            if (ComCount >= 3 && Count <= 14)
             {
                 input.Text += ",9";
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 15)
+            else if(Count <= 14)
             {
                 input.Text += "9";
                 ComCount++;
@@ -264,62 +293,230 @@ namespace Calculator
 
         private void MultInvBtn(object sender, RoutedEventArgs e)
         {
-            Num1 = 
+            if (input.Text != "")
+            {
+                Num1 = double.Parse(input.Text);
+                calculation.Text = "1/(" + input.Text + ")";
+                Num2 = 1 / Num1;
+                input.Text = Num2.ToString();
+                Count = 0;
+                ComCount = 0;
+
+                MultInvBtnActive = true;
+                PwrBtnActive = false;
+                SqrtBtnActive = false;
+                DevBtnActive = false;
+                TimesBtnActive = false;
+                MinusBtnActive = false;
+                AddBtnActive = false;
+                ReverseBtnActive = false;
+            }
         }
 
         private void PwrBtn(object sender, RoutedEventArgs e)
         {
+            if (input.Text != "")
+            {
+                Num1 = double.Parse(input.Text);
+                calculation.Text = "sqr(" + input.Text + ")";
+                Num2 = Num1 * Num1;
+                input.Text = Num2.ToString();
+                Count = 0;
+                ComCount = 0;
 
+                MultInvBtnActive = false;
+                PwrBtnActive = true;
+                SqrtBtnActive = false;
+                DevBtnActive = false;
+                TimesBtnActive = false;
+                MinusBtnActive = false;
+                AddBtnActive = false;
+                ReverseBtnActive = false;
+            }
         }
 
         private void SqrtBtn(object sender, RoutedEventArgs e)
         {
+            if (input.Text != null)
+            {
+                Num1 = double.Parse(input.Text);
+                calculation.Text = "\u221A(" + input.Text + ")";
+                Num2 = Math.Sqrt(Num1);
+                input.Text = Num2.ToString();
+                Count = 0;
+                ComCount = 0;
 
+                MultInvBtnActive = false;
+                PwrBtnActive = false;
+                SqrtBtnActive = true;
+                DevBtnActive = false;
+                TimesBtnActive = false;
+                MinusBtnActive = false;
+                AddBtnActive = false;
+                ReverseBtnActive = false;
+            }
         }
 
         private void DevBtn(object sender, RoutedEventArgs e)
         {
+            if (input.Text != null)
+            {
+                Num1 = Double.Parse(input.Text);
+                calculation.Text = input.Text + "/";
+                input.Text = "";
+                Count = 0;
+                ComCount = 0;
 
+                MultInvBtnActive = false;
+                PwrBtnActive = false;
+                SqrtBtnActive = false;
+                DevBtnActive = true;
+                TimesBtnActive = false;
+                MinusBtnActive = false;
+                AddBtnActive = false;
+                ReverseBtnActive = false;
+            }
         }
 
         private void TimesBtn(object sender, RoutedEventArgs e)
         {
+            if (input.Text != "")
+            {
+                Num1 = double.Parse(input.Text);
+                calculation.Text = input.Text + "x";
+                input.Text = "";
+                Count = 0;
+                ComCount = 0;
 
+                MultInvBtnActive = false;
+                PwrBtnActive = false;
+                SqrtBtnActive = false;
+                DevBtnActive = false;
+                TimesBtnActive = true;
+                MinusBtnActive = false;
+                AddBtnActive = false;
+                ReverseBtnActive = false;
+            }
         }
 
         private void MinusBtn(object sender, RoutedEventArgs e)
         {
+            if (input.Text != "")
+            {
+                Num1 = double.Parse(input.Text);
+                calculation.Text = input.Text + "-";
+                input.Text = "";
+                Count = 0;
+                ComCount = 0;
 
+                MultInvBtnActive = false;
+                PwrBtnActive = false;
+                SqrtBtnActive = false;
+                DevBtnActive = false;
+                TimesBtnActive = false;
+                MinusBtnActive = true;
+                AddBtnActive = false;
+                ReverseBtnActive = false;
+            }
         }
 
         private void AddBtn(object sender, RoutedEventArgs e)
         {
-            
+            if (input.Text != "")
+            {
+                Num1 = double.Parse(input.Text);
+                calculation.Text = input.Text + "+";
+                input.Text = "";
+                Count = 0;
+                ComCount = 0;
+
+                MultInvBtnActive = false;
+                PwrBtnActive = false;
+                SqrtBtnActive = false;
+                DevBtnActive = false;
+                TimesBtnActive = false;
+                MinusBtnActive = false;
+                AddBtnActive = true;
+                ReverseBtnActive = false;
+            }
         }
 
         private void ResultBtn(object sender, RoutedEventArgs e)
         {
-
+            if ( DevBtnActive == true)
+            {
+                Num2 = Num1 / double.Parse(input.Text);
+                calculation.Text = Num1 + "/" + input.Text;
+                input.Text = Num2.ToString();
+            }
+            else if ( TimesBtnActive == true)
+            {
+                Num2 = Num1 * double.Parse(input.Text);
+                calculation.Text = Num1 + "x" + input.Text;
+                input.Text = Num2.ToString();
+            }
+            else if ( MinusBtnActive == true)
+            {
+                Num2 = Num1 - double.Parse(input.Text);
+                calculation.Text = Num1 + "-" + input.Text;
+                input.Text = Num2.ToString();
+            }
+            else if ( AddBtnActive == true)
+            {
+                Num2 = Num1 + double.Parse(input.Text);
+                calculation.Text = Num1 + "+" + input.Text;
+                input.Text = Num2.ToString();
+            }
         }
 
-        private void CnslEntBtn(object sender, RoutedEventArgs e)
+        private void CansEntrBtn(object sender, RoutedEventArgs e)
         {
+            input.Text = "";
+            Count = 0;
+            ComCount = 0;
 
+            PntBtnActive = false;
         }
 
         private void ClearBtn(object sender, RoutedEventArgs e)
         {
+            input.Text = "";
+            calculation.Text = "";
+            Count = 0;
+            ComCount = 0;
 
+            PntBtnActive = false;
+            MultInvBtnActive = false;
+            PwrBtnActive = false;
+            SqrtBtnActive = false;
+            DevBtnActive = false;
+            TimesBtnActive = false;
+            MinusBtnActive = false;
+            AddBtnActive = false;
+            ReverseBtnActive = false;
         }
 
         private void BackBtn(object sender, RoutedEventArgs e)
         {
-
+            input.Text = input.Text.Remove(input.Text.Length - 1);
+            if (ComCount == 1)
+            {
+                input.Text = input.Text.Remove(input.Text.Length - 1);
+                ComCount = 3;
+                Count--;
+            }
+            else
+            {
+                ComCount--;
+                Count--;
+            }
         }
 
         private void ReverseBtn(object sender, RoutedEventArgs e)
         {
-
+            Num1 = 2 * double.Parse(input.Text);
+            Num2 = double.Parse(input.Text) - Num1;
+            input.Text = Num2.ToString();
         }
     }
 }

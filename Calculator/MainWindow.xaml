@@ -63,7 +63,7 @@
         <Button Grid.Column="3" Grid.Row="6" Click="ResultBtn">=</Button>
 
         <!-- Clear Buttons -->
-        <Button Grid.Column="0" Grid.Row="1" Click="CnslEntBtn">CE</Button>
+        <Button Grid.Column="0" Grid.Row="1" Click="CansEntrBtn">CE</Button>
         <Button Grid.Column="1" Grid.Row="1" Click="ClearBtn">C</Button>
         <Button Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Click="BackBtn" Content="&lt;-"></Button>
 
