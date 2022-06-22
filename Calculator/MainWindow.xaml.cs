@@ -443,29 +443,36 @@ namespace Calculator
 
         private void ResultBtn(object sender, RoutedEventArgs e)
         {
-            if ( DevBtnActive == true)
+            if (input.Text != "")
             {
-                Num2 = Num1 / double.Parse(input.Text);
-                calculation.Text = Num1 + "/" + input.Text;
-                input.Text = Num2.ToString();
+                if ( DevBtnActive == true)
+                {
+                    Num2 = Num1 / double.Parse(input.Text);
+                    calculation.Text = Num1 + "/" + input.Text;
+                    input.Text = Num2.ToString();
+                }
+                else if ( TimesBtnActive == true)
+                {
+                    Num2 = Num1 * double.Parse(input.Text);
+                    calculation.Text = Num1 + "x" + input.Text;
+                    input.Text = Num2.ToString();
+                }
+                else if ( MinusBtnActive == true)
+                {
+                    Num2 = Num1 - double.Parse(input.Text);
+                    calculation.Text = Num1 + "-" + input.Text;
+                    input.Text = Num2.ToString();
+                }
+                else if ( AddBtnActive == true)
+                {
+                    Num2 = Num1 + double.Parse(input.Text);
+                    calculation.Text = Num1 + "+" + input.Text;
+                    input.Text = Num2.ToString();
+                }
             }
-            else if ( TimesBtnActive == true)
+            else if (input.Text == "")
             {
-                Num2 = Num1 * double.Parse(input.Text);
-                calculation.Text = Num1 + "x" + input.Text;
-                input.Text = Num2.ToString();
-            }
-            else if ( MinusBtnActive == true)
-            {
-                Num2 = Num1 - double.Parse(input.Text);
-                calculation.Text = Num1 + "-" + input.Text;
-                input.Text = Num2.ToString();
-            }
-            else if ( AddBtnActive == true)
-            {
-                Num2 = Num1 + double.Parse(input.Text);
-                calculation.Text = Num1 + "+" + input.Text;
-                input.Text = Num2.ToString();
+                input.Text = "Can't calculate with zero or nothing";
             }
         }
 
@@ -498,17 +505,20 @@ namespace Calculator
 
         private void BackBtn(object sender, RoutedEventArgs e)
         {
-            input.Text = input.Text.Remove(input.Text.Length - 1);
-            if (ComCount == 1)
+            if (input.Text != "")
             {
                 input.Text = input.Text.Remove(input.Text.Length - 1);
-                ComCount = 3;
-                Count--;
-            }
-            else
-            {
-                ComCount--;
-                Count--;
+                if (ComCount == 1)
+                {
+                    input.Text = input.Text.Remove(input.Text.Length - 1);
+                    ComCount = 3;
+                    Count--;
+                }
+                else
+                {
+                    ComCount--;
+                    Count--;
+                }
             }
         }
 
