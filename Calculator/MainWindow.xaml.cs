@@ -18,10 +18,12 @@ namespace Calculator
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
 
         // dit predevined een paar dingen voor het gemak
+
         private double Num1 = 0;
         private double Num2 = 0;
         private double Count = 0;
@@ -38,6 +40,7 @@ namespace Calculator
         }
 
         // deze functie kijkt naar welke toets er is ingedrukt en roept de bijbehorende functie aan
+
         private void KeyFunction(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.NumPad0 || e.Key == Key.D0)
@@ -118,6 +121,7 @@ namespace Calculator
         // deze functie wordt aangeroepen als de 0 knop of toets is ingedrukt
         // daarna kijkt het of je al wat hebt ingevuld zodat je niet het veld vol kan gooien met nullen
         // dan kijkt hij of er een komma bij moet of niet
+
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
             if (input.Text.Length > 0)
@@ -140,6 +144,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de 1 knop of toets is ingedrukt
         // daarna kijkt hij of er een komma bij moet of niet
+
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
             if (ComCount >= 3 && Count <= 14)
@@ -158,6 +163,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de 2 knop of toets is ingedrukt
         // daarna kijkt hij of er een komma bij moet of niet
+
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
             if (ComCount >= 3 && Count <= 14)
@@ -176,6 +182,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de 3 knop of toets is ingedrukt
         // daarna kijkt hij of er een komma bij moet of niet
+
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
             if (ComCount >= 3 && Count <= 14)
@@ -194,6 +201,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de 4 knop of toets is ingedrukt
         // daarna kijkt hij of er een komma bij moet of niet
+
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
             if (ComCount >= 3 && Count <= 14)
@@ -212,6 +220,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de 5 knop of toets is ingedrukt
         // daarna kijkt hij of er een komma bij moet of niet
+
         private void Btn5_Click(object sender, RoutedEventArgs e)
         {
             if (ComCount >= 3 && Count <= 14)
@@ -230,6 +239,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de 6 knop of toets is ingedrukt
         // daarna kijkt hij of er een komma bij moet of niet
+
         private void Btn6_Click(object sender, RoutedEventArgs e)
         {
             if (ComCount >= 3 && Count <= 14)
@@ -248,6 +258,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de 7 knop of toets is ingedrukt
         // daarna kijkt hij of er een komma bij moet of niet
+
         private void Btn7_Click(object sender, RoutedEventArgs e)
         {
             if (ComCount >= 3 && Count <= 14)
@@ -266,6 +277,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de 8 knop of toets is ingedrukt
         // daarna kijkt hij of er een komma bij moet of niet
+
         private void Btn8_Click(object sender, RoutedEventArgs e)
         {
             if (ComCount >= 3 && Count <= 14)
@@ -284,6 +296,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de 9 knop of toets is ingedrukt
         // daarna kijkt hij of er een komma bij moet of niet
+
         private void Btn9_Click(object sender, RoutedEventArgs e)
         {
             if (ComCount >= 3 && Count <= 14)
@@ -301,6 +314,7 @@ namespace Calculator
         }
 
         // deze functie wordt aangeroepen als de punt knop of toets is ingedrukt
+
         private void BtnPnt_Click(object sender, RoutedEventArgs e)
         {
             if (PntBtnActive == false)
@@ -313,6 +327,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de multy invers knop is ingedrukt
         // daarna wordt de teks omgezet in getallen waarna hij 1 deelt door het ingevoerde getal
+
         private void MultInvBtn(object sender, RoutedEventArgs e)
         {
             if (input.Text != "")
@@ -333,6 +348,7 @@ namespace Calculator
 
         // deze functie wordt aangeroepen als de macht knop is ingedrukt
         // daarna wordt de tekst omgezet in getallen waarna hij het ingevoerde getal met zichzelf vermenigvuldigt
+
         private void PwrBtn(object sender, RoutedEventArgs e)
         {
             if (input.Text != "")
@@ -351,6 +367,7 @@ namespace Calculator
         }
         // deze functie wordt aangeroepen als de wortel knop is ingedrukt
         // daarna wordt de tekst omgezet in getallen waarna hij de wortel van het ingevoerde getal berekent
+
         private void SqrtBtn(object sender, RoutedEventArgs e)
         {
             if (input.Text != null)
@@ -372,6 +389,7 @@ namespace Calculator
         // deze functie wordt aangeroepen als de delendoor knop of toets is ingedrukt
         // daarna wordt de tekst omgezet in getallen en opgeslagen in num1
         // dan geeft hij aan dat de delendoor knop is gebruikt door de DevBtnActive op true te zetten
+
         private void DevBtn(object sender, RoutedEventArgs e)
         {
             if (input.Text != null)
@@ -392,6 +410,7 @@ namespace Calculator
         // deze functie wordt aangeroepen als de vermenigvuldigen knop of toets is ingedrukt
         // daarna wordt de tekst omgezet in getallen en opgeslagen in num1
         // dan geeft hij aan dat de vermenigvuldigen knop is gebruikt door de TimesBtnActive op true te zetten
+
         private void TimesBtn(object sender, RoutedEventArgs e)
         {
             if (input.Text != "")
@@ -412,6 +431,7 @@ namespace Calculator
         // deze functie wordt aangeroepen als de min knop of toets is ingedrukt
         // daarna wordt de tekst omgezet in getallen en opgeslagen in num1
         // dan geeft hij aan dat de min knop is gebruikt door de MinusBtnActive op true te zetten
+
         private void MinusBtn(object sender, RoutedEventArgs e)
         {
             if (input.Text != "")
@@ -432,6 +452,7 @@ namespace Calculator
         // deze functie wordt aangeroepen als de plus knop of toets is ingedrukt
         // daarna wordt de tekst omgezet in getallen en opgeslagen in num1
         // dan geeft hij aan dat de plus knop is gebruikt door de AddBtnActive op true te zetten
+
         private void AddBtn(object sender, RoutedEventArgs e)
         {
             if (input.Text != "")
@@ -449,7 +470,10 @@ namespace Calculator
             }
         }
 
-        // deze functie wordt aangeroepen als de plus knop of toets is ingedrukt
+        // deze functie wordt aangeroepen als de enter knop of toets is ingedrukt
+        // daarna kijkt hij welke operator actief is
+        // dan berekent hij de som door de ingevoerde tekst omtezetten in cijfers
+        // waarna hij het met Num1 berekent met de actieve operator
 
         private void ResultBtn(object sender, RoutedEventArgs e)
         {
@@ -480,11 +504,17 @@ namespace Calculator
                     input.Text = Num2.ToString();
                 }
             }
+
+            // dit zorgt er voor dat je niet met 0 of met een leeg veld iets kunt berekenen
+
             else if (input.Text == "")
             {
                 input.Text = "Can't calculate with zero or nothing";
             }
         }
+
+        // deze functie wordt aangeroepen als de CE knop is ingedrukt
+        // dit zorgt er voor dat je de laatste ingevoerde cijfers weg kunt halen
 
         private void CansEntrBtn(object sender, RoutedEventArgs e)
         {
@@ -494,6 +524,9 @@ namespace Calculator
 
             PntBtnActive = false;
         }
+        
+        // deze functie wordt aangeroepen als de C knop of delete toets is ingedrukt
+        // Dit zorgt er voor dat je de hele som met de ingevoerde cijfers kunt weg halen
 
         private void ClearBtn(object sender, RoutedEventArgs e)
         {
@@ -508,6 +541,11 @@ namespace Calculator
             MinusBtnActive = false;
             AddBtnActive = false;
         }
+
+        // Deze functie wordt aangeroepen als de <- knop of backspace toets is ingedrukt
+        // Hij checkt eerst of er wel een tekst is om weg te halen
+        // Dan haalt hij een getal weg
+        // Daarna kijkt hij of er een komma is, zo ja dan haalt hij die ook weg
 
         private void BackBtn(object sender, RoutedEventArgs e)
         {
@@ -527,6 +565,10 @@ namespace Calculator
                 }
             }
         }
+
+        // Deze functie wordt aangeroepen als de +/- knop is ingedrukt
+        // Eerst doet hij de ingevoerde tekst omzetten in getallen en doet het gelijk keer 2 en slaat het getal op als Num1
+        // Daarna pakt hij weer de ingevoerde tekst en doet dat min Num1
 
         private void ReverseBtn(object sender, RoutedEventArgs e)
         {
