@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Calculator
 {
@@ -97,7 +86,7 @@ namespace Calculator
             }
             else if (e.Key == Key.Enter)
             {
-               ResultBtn(sender, e); 
+                ResultBtn(sender, e);
             }
             else if (e.Key == Key.Divide)
             {
@@ -139,7 +128,7 @@ namespace Calculator
                     Count++;
                 }
             }
-            
+
         }
 
         // deze functie wordt aangeroepen als de 1 knop of toets is ingedrukt
@@ -153,7 +142,7 @@ namespace Calculator
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 14)
+            else if (Count <= 14)
             {
                 input.Text += "1";
                 ComCount++;
@@ -172,7 +161,7 @@ namespace Calculator
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 14)
+            else if (Count <= 14)
             {
                 input.Text += "2";
                 ComCount++;
@@ -191,7 +180,7 @@ namespace Calculator
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 14)
+            else if (Count <= 14)
             {
                 input.Text += "3";
                 ComCount++;
@@ -210,7 +199,7 @@ namespace Calculator
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 14)
+            else if (Count <= 14)
             {
                 input.Text += "4";
                 ComCount++;
@@ -229,7 +218,7 @@ namespace Calculator
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 14)
+            else if (Count <= 14)
             {
                 input.Text += "5";
                 ComCount++;
@@ -248,7 +237,7 @@ namespace Calculator
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 14)
+            else if (Count <= 14)
             {
                 input.Text += "6";
                 ComCount++;
@@ -267,12 +256,12 @@ namespace Calculator
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 14) if(Count <= 15)
-            {
-                input.Text += "7";
-                ComCount++;
-                Count++;
-            }
+            else if (Count <= 14) if (Count <= 15)
+                {
+                    input.Text += "7";
+                    ComCount++;
+                    Count++;
+                }
         }
 
         // deze functie wordt aangeroepen als de 8 knop of toets is ingedrukt
@@ -286,7 +275,7 @@ namespace Calculator
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 14)
+            else if (Count <= 14)
             {
                 input.Text += "8";
                 ComCount++;
@@ -305,7 +294,7 @@ namespace Calculator
                 ComCount = 1;
                 Count++;
             }
-            else if(Count <= 14)
+            else if (Count <= 14)
             {
                 input.Text += "9";
                 ComCount++;
@@ -319,7 +308,7 @@ namespace Calculator
         {
             if (PntBtnActive == false)
             {
-                input.Text +=".";
+                input.Text += ".";
                 PntBtnActive = true;
                 Count = 0;
             }
@@ -479,25 +468,25 @@ namespace Calculator
         {
             if (input.Text != "")
             {
-                if ( DevBtnActive == true)
+                if (DevBtnActive == true)
                 {
                     Num2 = Num1 / double.Parse(input.Text);
                     calculation.Text = Num1 + "/" + input.Text;
                     input.Text = Num2.ToString();
                 }
-                else if ( TimesBtnActive == true)
+                else if (TimesBtnActive == true)
                 {
                     Num2 = Num1 * double.Parse(input.Text);
                     calculation.Text = Num1 + "x" + input.Text;
                     input.Text = Num2.ToString();
                 }
-                else if ( MinusBtnActive == true)
+                else if (MinusBtnActive == true)
                 {
                     Num2 = Num1 - double.Parse(input.Text);
                     calculation.Text = Num1 + "-" + input.Text;
                     input.Text = Num2.ToString();
                 }
-                else if ( AddBtnActive == true)
+                else if (AddBtnActive == true)
                 {
                     Num2 = Num1 + double.Parse(input.Text);
                     calculation.Text = Num1 + "+" + input.Text;
@@ -524,7 +513,7 @@ namespace Calculator
 
             PntBtnActive = false;
         }
-        
+
         // deze functie wordt aangeroepen als de C knop of delete toets is ingedrukt
         // Dit zorgt er voor dat je de hele som met de ingevoerde cijfers kunt weg halen
 
